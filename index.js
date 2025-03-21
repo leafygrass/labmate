@@ -32,7 +32,7 @@ const checkAndSeedDatabase = async () => {
 }
   
 // Connect to MongoDB and check for demo profiles
-mongoose.connect('mongodb://localhost/LabMateDB')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/LabMateDB')
 .then(() => {
     console.log('Connected to MongoDB successfully');
     // After successful connection, check and seed the database if needed
