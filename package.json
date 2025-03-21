@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node database/seedDatabase.js",
     "deploy": "vercel build && vercel deploy --prod",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo \"No build step required for this project\""
   },
   "repository": {
     "type": "git",
