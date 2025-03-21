@@ -17,7 +17,6 @@
     }
   ],
   "build": {
-    "command": "npm install",
     "outputDirectory": ""
   }
 }
