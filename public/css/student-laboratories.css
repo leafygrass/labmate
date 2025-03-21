@@ -1,0 +1,400 @@
+/* CSS for student-laboratories.html */
+
+:root {
+    --primary-color: #23c686;
+    --secondary-color: #1d3853;
+    --background-color: #fbfcf6;
+    --selected-color: #FC9D45;
+
+    --primary-font-fam: 'Roboto';
+    --secondary-font-fam: 'DM Sans';
+    --text-color: #1b1b1b;
+}
+
+body{
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.frame{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    position: relative;
+    text-align: center;
+    font-family: var(--secondary-font-fam);
+    font-weight: 600;
+    font-size: 35px;
+    color: var(--secondary-color);
+    padding: 80px 100px 50px 100px;
+}
+
+.dropdown, #chart{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 25px;
+    padding: 40px 40px 10px 40px;
+}
+
+.dropdown-header, #chart-header{
+    color: var(--secondary-color);
+    font-family: var(--secondary-font-fam);
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+#labs, #dates, #endtimes{
+    width: 1000px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../img/arrow-down.png) no-repeat 99% center, #FFFFFF;
+    background-size: 20px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    color: var(--secondary-color);
+    font-family: var(--primary-font-fam);
+    padding: 8px 500px 8px 15px;
+    color: rgba(29, 56, 83, 0.8);
+}
+
+#labs:focus, #dates:focus, #endtimes:focus{
+    background: url(../img/arrow-up.png) no-repeat 99% center, #FFFFFF;
+    background-size: 20px;
+}
+
+#chart-body{
+    width: 1000px;
+    overflow-x: auto;
+    background: #FFFFFF;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    color: var(--secondary-color);
+    font-family: var(--primary-font-fam);
+    margin-bottom: 10px;
+}
+
+table{
+    padding: 8px;
+    border-collapse: separate;
+}
+
+th{
+    text-align: center;
+    white-space: nowrap;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+#seat-header{
+    white-space: nowrap;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+td{
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.clickable-seat{
+    height: 50px;
+    width: 50px;
+    background: #D9D9D9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clickable-seat:hover {
+    background: #c0c0c0;
+}
+
+.selected-seat {
+    height: 50px;
+    width: 50px;
+    background: var(--selected-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.taken-seat{
+    height: 50px;
+    width: 50px;
+    background: #FF7878;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.your-seat{
+    height: 50px;
+    width: 50px;
+    background: #23c686;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#seats{
+    background: none;
+    font-weight: 500;
+}
+
+#legend{
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+    margin-bottom: 10px;
+}
+
+.legend-text{
+    color: var(--secondary-color);
+    font-size: 14px;
+    padding-left: 8px;
+    padding-right: 24px;
+}
+
+#legend-available{
+    height: 25px;
+    width: 25px;
+    background-color: #D9D9D9;
+    border-radius: 4px;
+}
+
+#legend-selected{
+    height: 25px;
+    width: 25px;
+    background-color: #FC9D45;
+    border-radius: 4px;
+}
+
+#legend-unavailable{
+    height: 25px;
+    width: 25px;
+    background-color: #FF7878;
+    border-radius: 4px;
+}
+
+#legend-booking{
+    height: 25px;
+    width: 25px;
+    background-color: #23c686;
+    border-radius: 4px;
+}
+
+.checkbox-container {
+    display: none; /* Hidden by default */
+    align-items: center;
+    margin: 20px 0;
+    font-family: var(--primary-font-fam);
+    color: var(--secondary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-container.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-container label {
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#anonymous-option {
+    display: none;
+}
+
+#reserve-button{
+    width: 150px;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    font-family: var(--primary-font-fam);
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#reserve-button:hover {
+    background-color: #162c42;
+}
+
+#reserve-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Popup styles */
+.popup2 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup2.show {
+    display: block;
+}
+
+.popup-box {
+    text-align: center;
+}
+
+.popup-header {
+    display: block;
+    font-family: var(--secondary-font-fam);
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.user-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.user-name {
+    display: block;
+    font-family: var(--primary-font-fam);
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+/* Daily Reservations Section */
+#daily-reservations {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#daily-reservations h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lab-section {
+    margin-bottom: 25px;
+}
+
+.lab-section h3 {
+    color: #2E5A88;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.reservation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.reservation-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px;
+    width: calc(33.333% - 15px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.reservation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-item.current-user {
+    background-color: #FFF3E0;
+    border-left: 3px solid #FC9D45;
+}
+
+.reservation-time {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.reservation-seat {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.reservation-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.small-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.no-reservations {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .reservation-item {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .reservation-item {
+        width: 100%;
+    }
+}

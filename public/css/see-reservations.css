@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #fbfcf6;
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    padding: 80px 100px 80px 100px;
+    color: var(--dark-blue);
+}
+
+table{
+    width: 100%;
+}
+
+th{
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--dark-blue);
+}
+
+td{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 5px;
+    color: var(--dark-blue);
+}
+
+.select-btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    margin-top: 8px;
+}
+
+.reservations{
+    height: 65vh;
+    width: 60%;
+    overflow: auto;
+    border-radius: 30px;
+    outline: 1px solid var(--dark-blue);
+    justify-content: center;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.remove-btn-wrapper{
+    display: flex;    
+    justify-content: center;
+    margin-top: 38px;
+}
+
+.remove-btn{
+    width: 200px;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
+    font-family: var(--primary-font-family);
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.remove-btn:hover{
+    transform: scale(1.05);
+}
+
+.details{
+    height: 25px;
+    cursor: pointer; 
+    transition: all 0.3s ease
+}
+
+.details:hover{
+    transform: scale(1.10);
+}
+
+
+/* Added styles from inline CSS */
+#reservation-details {
+    margin-top: 3px;
+    height: 92vh;
+    width: 50%;
+    background-color: #fbfcf6;
+}
+
+#remove-reservation {
+    margin-top: 20px;
+}

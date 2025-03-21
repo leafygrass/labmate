@@ -1,0 +1,97 @@
+
+/* minor reference: https://www.youtube.com/watch?v=GdrbE-s5DgQ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    color: var(--off-white);
+}
+
+.navbar label.logo {
+    color: var(--off-white);
+    font-family: var(--secondary-font-family);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.navbar label.logo #mate {
+    color: var(--dark-blue);
+}
+
+.nav-header {
+    position: relative;
+    padding: 0 2rem;
+    background: var(--green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#index-header {
+    background: none;
+    box-shadow: none;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    max-width: 1920px;
+    min-width: 600px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--off-white);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.navbar a:hover {
+    color: var(--dark-blue)
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .active {
+    border-bottom-width: 3px;
+    border-bottom-color: var(--off-white);
+    border-bottom-style: solid;
+    padding-bottom: 5px;
+    pointer-events: none;
+}
+
+.navbar .nav-links a:hover {
+    border-bottom-width: 3px;
+    border-bottom-color: var(--dark-blue);
+    border-bottom-style: solid;
+    padding-bottom: 5px;
+    transition: border-bottom-width 0.1s ease;
+}
+
+/* make navbar responsive */
+
+@media  (max-width: 900px) {
+    .navbar a {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
